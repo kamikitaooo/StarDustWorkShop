@@ -25,16 +25,24 @@
             android:layout_gravity="center"/>
 
         <EditText
-            android:id="@+id/User"
+            android:id="@+id/etDis"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Username"
+            android:hint="DisplayName"
             android:layout_marginTop="30dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"/>
 
         <EditText
-            android:id="@+id/Pass"
+            android:id="@+id/etUser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Username"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"/>
+
+        <EditText
+            android:id="@+id/etPass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Password"
@@ -42,7 +50,7 @@
             android:layout_marginRight="20dp"/>
 
         <EditText
-            android:id="@+id/Confirm"
+            android:id="@+id/etConfirm"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Password Confirm"
@@ -55,7 +63,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/Reg"
+        android:id="@+id/btReg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Register"
