@@ -7,34 +7,22 @@ import android.widget.ListView;
 
 public class NewsList extends AppCompatActivity {
 
-    private ListView lt;
-
-
-
+    private ListView lvNews;
+    static String[] topicNews = new String[] {"Topic News", "Topic News", "Topic News", "Topic News", "Topic News", "Topic News", "Topic News", "Topic News"};
+    static String[] topicDate = new String[] {"5 nov 2016", "5 nov 2016", "5 nov 2016", "5 nov 2016", "5 nov 2016", "5 nov 2016", "5 nov 2016", "5 nov 2016"};
+    static int[] imgID = new int[]{R.mipmap.ic_launcher, R.mipmap.ic_launcher, R.mipmap.ic_launcher, R.mipmap.ic_launcher, R.mipmap.ic_launcher, R.mipmap.ic_launcher, R.mipmap.ic_launcher, R.mipmap.ic_launcher};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news_list);
 
-        findViewById(R.id.lt);
+        lvNews = (ListView) findViewById(R.id.lvNews);
+        customAdap();
+    }
 
-        lt = (ListView) findViewById(R.id.lt);
-
-        String[] values = new String[] {"Topic News","Date"};
-
-
-
-
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(
-                this,  //Context of this activity
-                android.R.layout.simple_list_item_1,  //คือชื่อ layout ที่จะแสดง
-                values
-        );
-
-
-
-        lt.setAdapter(adapter);
-
+    private void customAdap() {
+        //lvMenu.setAdapter(new CustomAdapter(getApplicationContext()));
+        lvNews.setAdapter(new CustomAdapter(getApplicationContext(),topicNews,topicDate,imgID));
     }
 }

@@ -100,7 +100,7 @@ public class Register extends AppCompatActivity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            Toast.makeText(Register.this, s ,Toast.LENGTH_SHORT).show();
+
         }
 
         @Override
@@ -139,6 +139,7 @@ public class Register extends AppCompatActivity {
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
+            Toast.makeText(Register.this, s ,Toast.LENGTH_SHORT).show();
 
             //{
            //     "result":{
@@ -150,7 +151,7 @@ public class Register extends AppCompatActivity {
             try{
                 JSONObject rootObj = new JSONObject(s);
                 if(rootObj.has("result")){
-                    JSONObject resultObj.getJSONObject("result");
+                    JSONObject resultObj = rootObj.getJSONObject("result");
                     if(resultObj.getInt("result") == 1){
                         Toast.makeText(Register.this,resultObj.getString("result_desc"),Toast.LENGTH_SHORT);
                                 finish();
