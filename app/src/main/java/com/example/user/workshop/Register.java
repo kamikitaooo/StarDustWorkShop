@@ -148,6 +148,8 @@ public class Register extends AppCompatActivity {
            // }
            // }
 
+
+
             try{
                 JSONObject rootObj = new JSONObject(s);
                 if(rootObj.has("result")){

@@ -1,7 +1,10 @@
 package com.example.user.workshop;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -19,6 +22,16 @@ public class NewsList extends AppCompatActivity {
 
         lvNews = (ListView) findViewById(R.id.lvNews);
         customAdap();
+
+        lvNews.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent i = new Intent(NewsList.this,NewsDetail.class);
+                i.putExtra("listID", (int)id);
+                startActivity(i);
+            }
+        });
+
     }
 
     private void customAdap() {
